@@ -1,0 +1,24 @@
+{
+  "name": "pwd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andysartori/Nutrition_Blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andysartori/Nutrition_Blog/issues"
+  },
+  "homepage": "https://github.com/andysartori/Nutrition_Blog#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "method-override": "^2.3.7",
+    "mongoose": "^4.7.2"
+  }
+}
