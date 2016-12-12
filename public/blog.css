@@ -1,0 +1,38 @@
+.blogText {
+  color: #fff;
+}
+
+.featuredArticle {
+  margin-top: 5vw;
+  position: relative;
+  background: url(https://www.mealpro.net/wp-content/uploads/2016/08/GymBackgroundDesk.jpg) left top / cover no-repeat !important;
+  height: 32vw;
+  width: 55%;
+}
+
+.sideArticleTop {
+  margin-top: 5vw;
+  position: relative;
+  background: url(https://www.mealpro.net/wp-content/uploads/2016/05/NutritionalAnalysis.png) left top / cover no-repeat !important;
+  height: 12vw;
+  width: 35%;
+  float: right;
+}
+
+.sideArticleBottom {
+  margin-top: 5vw;
+  position: relative;
+  background: url(https://www.mealpro.net/wp-content/uploads/2016/05/BlogPage2.jpg) left top / cover no-repeat !important;
+  height: 15vw;
+  width: 35%;
+  float: right;
+}
+
+.regularArticle {
+  margin-top: 9vw;
+  position: relative;
+  background: url(https://www.mealpro.net/wp-content/uploads/2016/06/LeanProteinDesktop.jpg) left top / cover no-repeat !important;
+  height: 20vw;
+  width: 35%;
+  float: left;
+}

@@ -1,0 +1,34 @@
+p, h2 {
+  font-weight: 300;
+  font-family: 'azo-sans-web', lato, sans-serif;
+  margin: 0px;
+}
+
+
+/*NAVBAR*/
+.nav {
+  border-bottom: 1px solid #dbdbdb !important;
+  height: 75px !important;
+}
+.navLogo {
+  max-height: 35px;
+  margin-top: 20px;
+}
+.menuBar{
+  text-align: right;
+  margin-bottom: 0px;
+  margin-top: 28px;
+}
+
+
+/*PAGE DETAILS*/
+.width {
+  max-width: 1270px !important;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.body {
+  padding-left: 35px;
+  padding-right: 35px;
+}
