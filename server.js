@@ -4,7 +4,7 @@
   var bodyParser = require('body-parser');
   var methodOverride = require('method-override');
   var mongoose = require('mongoose'); // connects to server
-  var mongoDBURI = process.env.mongoDBURI_URI || 'mongodb://localhost:27017/blog';
+  var mongoDBURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/blog';
 
 //PORT
   var port = process.env.PORT || 3000; // used to launch application in browser
