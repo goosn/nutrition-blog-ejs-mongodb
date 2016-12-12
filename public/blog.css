@@ -2,12 +2,28 @@
   color: #fff;
 }
 
+.emailCapture {
+  float: right;
+  margin-top: 9vw;
+}
+.form {
+  text-align: right;
+}
+.line{
+  border-bottom: 1px solid #eee;
+  clear: both;
+  width: 55%;
+  float: left;
+}
+
+/*ARTICLES*/
 .featuredArticle {
   margin-top: 5vw;
   position: relative;
   background: url(https://www.mealpro.net/wp-content/uploads/2016/08/GymBackgroundDesk.jpg) left top / cover no-repeat !important;
   height: 32vw;
   width: 55%;
+  margin-bottom: 9vw;
 }
 
 .sideArticleTop {
@@ -34,5 +50,6 @@
   background: url(https://www.mealpro.net/wp-content/uploads/2016/06/LeanProteinDesktop.jpg) left top / cover no-repeat !important;
   height: 20vw;
   width: 35%;
-  float: left;
+  clear: both;
+  margin-bottom: 9vw;
 }

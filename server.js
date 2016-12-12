@@ -26,20 +26,18 @@
     var blogController = require('./controllers/blogPost.js'); // whenver access a file that is an npm module, have to have ./
     app.use('/blogs', blogController);
 
-//ROUTE
-    // app.get('/', function(req, res){
-    //   res.redirect('/blog');
-    // });
-    //
-    // app.get('/blog', function(req, res){
-    //   res.render('blog/main.ejs');
-    // });
-    //
-    // app.get('/post', function(req, res){
-    //   res.render('blog/post.ejs');
-    // })
-
-
+    //ROUTE
+        // app.get('/', function(req, res){
+        //   res.redirect('/blog');
+        // });
+        //
+        // app.get('/blog', function(req, res){
+        //   res.render('blog/main.ejs');
+        // });
+        //
+        // app.get('/post', function(req, res){
+        //   res.render('blog/post.ejs');
+        // })
 
 //LISTENER
     app.listen(3000, function(){

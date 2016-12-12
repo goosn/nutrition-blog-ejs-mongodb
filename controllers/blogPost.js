@@ -3,7 +3,7 @@ var router = express.Router();
 var Blog = require('../models/blog.js')
 
 router.get('/', function(req, res){
-  res.render('blog/main.ejs');
+  res.redirect('blog/main.ejs');
 });
 
 //New
