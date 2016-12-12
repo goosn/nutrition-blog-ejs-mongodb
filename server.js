@@ -17,26 +17,27 @@
     });
 
 //MIDDLEWARE
+    app.use(express.static("public"));
     app.use(methodOverride('_method'));
     app.use(bodyParser.urlencoded({extended: false}));
     app.use(bodyParser.json());
 
 //CONTROLLER MIDDLEWARE
     var blogController = require('./controllers/blogPost.js'); // whenver access a file that is an npm module, have to have ./
-    app.use('/blogPost', blogController);
+    app.use('/blogs', blogController);
 
 //ROUTE
-    app.get('/', function(req, res){
-      res.redirect('/blog');
-    });
-
-    app.get('/blog', function(req, res){
-      res.render('blog/main.ejs');
-    });
-
-    app.get('/post', function(req, res){
-      res.render('blog/post.ejs');
-    })
+    // app.get('/', function(req, res){
+    //   res.redirect('/blog');
+    // });
+    //
+    // app.get('/blog', function(req, res){
+    //   res.render('blog/main.ejs');
+    // });
+    //
+    // app.get('/post', function(req, res){
+    //   res.render('blog/post.ejs');
+    // })
 
 
 
