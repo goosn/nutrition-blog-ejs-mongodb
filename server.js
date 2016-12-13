@@ -2,6 +2,7 @@
   var express = require('express');
   var app = express ();
   var bodyParser = require('body-parser');
+  var blogController = require('./controllers/blogPost'); // whenver access a file that is an npm module, have to have ./
   var methodOverride = require('method-override');
   var mongoose = require('mongoose'); // connects to server
   var mongoDBURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/blog';
@@ -24,21 +25,9 @@
     app.use(bodyParser.json());
 
 //CONTROLLER MIDDLEWARE
-    var blogController = require('./controllers/blogPost.js'); // whenver access a file that is an npm module, have to have ./
-    app.use('/blogs', blogController);
+    app.use('/blog', blogController); // must be after other middleware or req.body will return undefined
+                                      // inside of our blogPost.js the root route now becomes /blog 
 
-    //ROUTE
-        // app.get('/', function(req, res){
-        //   res.redirect('/blog');
-        // });
-        //
-        // app.get('/blog', function(req, res){
-        //   res.render('blog/main.ejs');
-        // });
-        //
-        // app.get('/post', function(req, res){
-        //   res.render('blog/post.ejs');
-        // })
 
 //LISTENER
     app.listen(port, function(){

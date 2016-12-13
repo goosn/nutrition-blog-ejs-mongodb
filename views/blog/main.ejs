@@ -20,30 +20,33 @@
   </div>
   <div>
         <div class="width body">
-          <!--Top 3 Articles-->
-            <div class='col-sm-8 featuredArticle'>
-              <h2 class='blogText'>.</h2>
-            </div>
-            <div class='col-sm-4 sideArticleTop'>
-              <h2 class='blogText'>.</h2>
-            </div>
-            <div class='col-sm-4 sideArticleBottom'>
-              <h2 class='blogText'>.</h2>
-            </div>
-            <hr class='line'>
-          <!--Regular Article Column-->
-            <div class='col-sm-8 regularArticle'>
-              <p><a href="/post">What Are Good Protein?</p></a>
-            </div>
-          <!--Lead Capture Form-->
-            <div class='col-sm-4 emailCapture'>
-              <form class='form' action="/blogs" method="POST"> <!-- this needs to be connected to our controller -->
-                <input type="text" name="title" placeholder="email"/><br/>
-                <!-- <textarea name="body"></textarea><br/> -->
-                <input type="submit" value="Count Me In"/>
-              </form>
-           </div>
-         </div>
+          <% for (var num = 0; num <blog.length; num++) { %>
+
+              <!--Top 3 Articles-->
+                <div class='col-sm-8 featuredArticle'>
+                  <h2 class='blogText'><%=blog[num].title%></h2>
+                </div>
+                <div class='col-sm-4 sideArticleTop'>
+                  <h2 class='blogText'><%=blog[num].title%></h2>
+                </div>
+                <div class='col-sm-4 sideArticleBottom'>
+                  <h2 class='blogText'><%=blog[num].title%></h2>
+                </div>
+                <hr class='line'>
+              <!--Regular Article Column-->
+                <div class='col-sm-8 regularArticle'>
+                  <p><a href="blog/<%= blog._id %>"><%=blog[num].title%></p></a>
+                </div>
+              <!--Lead Capture Form-->
+                <div class='col-sm-4 emailCapture'>
+                  <form class='form' action="/blog" method="POST"> <!-- this needs to be connected to our controller -->
+                    <input type="text" name="title" placeholder="email"/><br/>
+                    <!-- <textarea name="body"></textarea><br/> -->
+                    <input type="submit" value="Count Me In"/>
+                  </form>
+               </div>
+          </div>
+        <% } %>
   </div>
   <div class="footer">
   </div>
