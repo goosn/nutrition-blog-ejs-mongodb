@@ -20,22 +20,22 @@
   </div>
   <div>
         <div class="width body">
-          <% for (var num = 0; num <blog.length; num++) { %>
+          <% for (var num = 0; num < 1; num++) { %>
 
               <!--Top 3 Articles-->
                 <div class='col-sm-8 featuredArticle'>
-                  <h2 class='blogText'><%=blog[num].title%></h2>
+                  <h2 class='blogText'><a href="<%= blog[0]._id %>"><%=blog[0].title%></a></h2>
                 </div>
                 <div class='col-sm-4 sideArticleTop'>
-                  <h2 class='blogText'><%=blog[num].title%></h2>
+                  <h2 class='blogText'><a href="<%= blog[1]._id %>"><%=blog[1].title%></a></h2>
                 </div>
                 <div class='col-sm-4 sideArticleBottom'>
-                  <h2 class='blogText'><%=blog[num].title%></h2>
+                  <h2 class='blogText'><a href="<%= blog[2]._id %>"><%=blog[2].title%></a></h2>
                 </div>
                 <hr class='line'>
               <!--Regular Article Column-->
                 <div class='col-sm-8 regularArticle'>
-                  <p><a href="blog/<%= blog._id %>"><%=blog[num].title%></p></a>
+                  <p><a href="<%= blog[3]._id %>"><%=blog[3].title%></a></p>
                 </div>
               <!--Lead Capture Form-->
                 <div class='col-sm-4 emailCapture'>
