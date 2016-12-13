@@ -1,7 +1,10 @@
-p, h2 {
+p, h2, h3, h1 {
   font-weight: 300;
   font-family: 'azo-sans-web', lato, sans-serif;
   margin: 0px;
+}
+a {
+  color: #fff;
 }
 
 
@@ -15,9 +18,19 @@ p, h2 {
   margin-top: 20px;
 }
 .menuBar{
-  text-align: right;
+  float: right;
   margin-bottom: 0px;
   margin-top: 28px;
+}
+
+/*BUTTONS*/
+.smallCTA {
+  color: #fff !important;
+  background-color: #00cbff;
+  color: #fff !important;
+  padding: 5px;
+  width: 68px;
+  border-radius: 1px;
 }
 
 

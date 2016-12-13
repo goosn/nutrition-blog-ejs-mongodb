@@ -25,6 +25,9 @@
   width: 55%;
   margin-bottom: 9vw;
 }
+.featuredArticleText{
+  margin-top: 27vw;
+}
 
 .sideArticleTop {
   margin-top: 5vw;
@@ -33,6 +36,9 @@
   height: 12vw;
   width: 35%;
   float: right;
+}
+.sideArticleTopText{
+  margin-top: 8vw;
 }
 
 .sideArticleBottom {
@@ -43,6 +49,9 @@
   width: 35%;
   float: right;
 }
+.sideArticleBottomText{
+  margin-top: 10.5vw;
+}
 
 .regularArticle {
   margin-top: 9vw;
@@ -52,4 +61,15 @@
   width: 35%;
   clear: both;
   margin-bottom: 9vw;
+}
+.regularArticleTopText{
+  margin-top: 17vw;
+}
+
+
+/*POST PADDING*/
+.padding{
+  margin-top: 10em;
+  padding: 40px;
+  margin-bottom: 15em;
 }

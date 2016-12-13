@@ -8,12 +8,11 @@ var postSchema = mongoose.Schema({
   title: { type: String, required: true},
   body: String,
   img: {type: String, default:''}
+  // category: String
 });
 
-//Make a MODEL using that SCHEMA 
+//Make a MODEL using that SCHEMA
 var Post = mongoose.model('Blog', postSchema);
-
-//add 7 RESTFul routes
 
 
 //Export the model

@@ -3,6 +3,7 @@
   var app = express ();
   var bodyParser = require('body-parser');
   var blogController = require('./controllers/blogPost'); // whenver access a file that is an npm module, have to have ./
+  var categoriesController = require('./controllers/controller');
   var methodOverride = require('method-override');
   var mongoose = require('mongoose'); // connects to server
   var mongoDBURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/blog';
@@ -26,8 +27,8 @@
 
 //CONTROLLER MIDDLEWARE
     app.use('/blog', blogController); // must be after other middleware or req.body will return undefined
-                                      // inside of our blogPost.js the root route now becomes /blog 
-
+                                      // inside of our blogPost.js the root route now becomes /blog
+    app.use('/categories', categoriesController);
 
 //LISTENER
     app.listen(port, function(){
