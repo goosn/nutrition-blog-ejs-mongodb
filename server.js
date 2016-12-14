@@ -30,6 +30,11 @@
                                       // inside of our blogPost.js the root route now becomes /blog
     app.use('/categories', categoriesController);
 
+//ROOT ROUTE
+    app.get('/', function(req, res){
+      res.redirect('/blog');
+    });
+
 //LISTENER
     app.listen(port, function(){
       console.log('listening...' + port);
