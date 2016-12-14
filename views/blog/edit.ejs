@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Page</title>
+  </head>
+  <body>
+    <header>
+        <h1>Edit <%=Blog.title%></h1>
+          <ul>
+            <li>
+              <a href="/blog">Blog Home</a>
+            </li>
+          </ul>
+    </header>
+    <main>
+        <h2>Blog Post Attributes:</h2>
+        <form action="/blog/<%=blog._id%>?_method=PUT" method="post">
+          <input type="text" name="name" value="<%=blog.title%>"/><br/>
+          <input type="submit" value="Update Post"/>
+        </form>
+    </main>
+  </body>
+</html>

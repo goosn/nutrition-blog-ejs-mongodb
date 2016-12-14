@@ -20,23 +20,13 @@
   </div>
   <div>
         <div class="width body">
-          <% for (var num = 0; num < 1; num++) { %>
-
+          <% for (var num = 0; num < blog.length; num++) { %>
               <!--Top 3 Articles-->
                 <div class='col-sm-8 featuredArticle'>
-                  <h2 class='blogText featuredArticleText'><a href="/blog/<%= blog[0]._id %>"><%=blog[0].title%></a></h2>
+                  <h2 class='blogText featuredArticleText'><a href="/blog/<%= blog[num]._id %>"><%=blog[num].title%></a></h2>
                 </div>
-                <div class='col-sm-4 sideArticleTop'>
-                  <h2 class='blogText sideArticleTopText'><a href="/blog/<%= blog[1]._id %>"><%=blog[1].title%></a></h2>
-                </div>
-                <div class='col-sm-4 sideArticleBottom'>
-                  <h2 class='blogText sideArticleBottomText'><a href="/blog/<%= blog[2]._id %>"><%=blog[2].title%></a></h2>
-                </div>
-                <hr class='line'>
-              <!--Regular Article Column-->
-                <div class='col-sm-8 regularArticle'>
-                  <h2 class='regularArticleTopText'><a href="/blog/<%= blog[3]._id %>"><%=blog[3].title%></a></h2>
-                </div>
+              <% } %>
+                
               <!--Lead Capture Form-->
                 <div class='col-sm-4 emailCapture'>
                   <form class='form' action="/blog" method="POST"> <!-- this needs to be connected to our controller -->
@@ -47,7 +37,7 @@
                   <p><a class="textLink" href="/categories">View Blog Categories</a></p>
                </div>
           </div>
-        <% } %>
+        <!--previous end of for loop-->
   </div>
   <div class="footer">
   </div>

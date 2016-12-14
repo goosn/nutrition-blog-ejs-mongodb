@@ -24,6 +24,13 @@ var categories = require('../models/categories.js')
       });
     });
 
+    //put
+    router.put('/:id', function(req, res){
+	    Author.findByIdAndUpdate(req.params.id, req.body, function(){
+		    res.redirect('/authors');
+    	});
+    });
+
 
 
 //EXPORT
