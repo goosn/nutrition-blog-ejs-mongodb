@@ -12,12 +12,19 @@ var categories = require('../models/categories.js')
       });
     });
 
+    //show for categories
+    router.get('/categories', function(req, res){
+      res.render('categories/index.ejs')
+    });
+
     //show
     router.get('/:id', function(req, res){
       Blog.findById(req.params.id, function(err, createdBlog){ //computer finds id in req.params
-        res.render('blog/post.ejs', {blog: createdBlog}) // render post page, make createdBlog available
+        res.render('blog/post.ejs', {blog: createdBlog}) // 1)render post page, make createdBlog available 2)res.render points to the views folder by default
       });
     });
+
+
 
 //EXPORT
 module.exports = router;

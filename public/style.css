@@ -32,6 +32,12 @@ a {
   width: 68px;
   border-radius: 1px;
 }
+.textLink {
+  color: #435363;
+  float: right;
+  padding-top: 1.5rem;
+  font-size: 1.6rem;
+}
 
 
 /*PAGE DETAILS*/

@@ -44,5 +44,15 @@ var Categories = require('../models/categories.js')
       });
     });
 
+    //delete
+    router.delete('/:id', function(req, res){
+    console.log(req.params.id);
+     Blog.findByIdAndRemove(req.params.id, function(err, blog){ // upper case B has to match top of this document, the Model      
+      res.redirect('/blog');
+    });
+  });
+
+
+
 //EXPORT
 module.exports = router;
