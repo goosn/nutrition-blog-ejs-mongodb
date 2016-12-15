@@ -3,7 +3,7 @@
   var app = express ();
   var bodyParser = require('body-parser');
   var blogController = require('./controllers/blogPost'); // whenver access a file that is an npm module, have to have ./
-  var categoriesController = require('./controllers/categories');
+  var categoriesController = require('./controllers/categories.js');
   var methodOverride = require('method-override');
   var mongoose = require('mongoose'); // connects to server
   var mongoDBURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/blog';

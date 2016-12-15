@@ -21,14 +21,14 @@
      </div>
      <!--Post-->
      <div class="padding width">
-       <h1><%= blog.title %></h1>
-        <%= blog.body %>
-        <form action="/blog/<%=blog._id%>?_method=DELETE" method="post">
+       <h1><%= post.title %></h1>
+        <p><%= post.body %></p>
+        <section>
+          <p style="color: #435363;"><a style="color: #435363;" href="/blog/<%=post._id%>/edit">Edit</a></p>
+        </section>
+        <form action="/blog/<%=post._id%>?_method=DELETE" method="post">
           <input type="submit" value="Delete"/>
         </form>
-        <!-- <form action="/blog/<%=blog._id%>?_method" method="PUT">
-          <input type="submit" value="Delete"/>
-        </form> -->
     </div>
     <div class="footer">
     </div>

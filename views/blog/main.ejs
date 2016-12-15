@@ -15,28 +15,32 @@
           </div>
           <div class="span1 offset5 menuBar">
               <p class="smallCTA"><a href="/blog/new">New Post</a></p>
+              <p class="smallCTA"><a href="/categories/new">New Category</a></p>
           </div>
      </div>
   </div>
   <div>
         <div class="width body">
-          <% for (var num = 0; num < blog.length; num++) { %>
-              <!--Top 3 Articles-->
-                <div class='col-sm-8 featuredArticle'>
-                  <h2 class='blogText featuredArticleText'><a href="/blog/<%= blog[num]._id %>"><%=blog[num].title%></a></h2>
+          <% for (var num = 0; num < allPosts.length; num++) { %>
+              <!--Articles-->
+                <div class='col-sm-8 col-sm-offset-2 featuredArticle'>
+                  <h2 class='blogText featuredArticleText'><a href="/blog/<%= allPosts[num]._id %>"><%=allPosts[num].title%></a></h2>
                 </div>
               <% } %>
-                
+
               <!--Lead Capture Form-->
                 <div class='col-sm-4 emailCapture'>
                   <form class='form' action="/blog" method="POST"> <!-- this needs to be connected to our controller -->
                     <input type="text" name="title" placeholder="email"/><br/>
                     <!-- <textarea name="body"></textarea><br/> -->
-                    <input type="submit" value="Count Me In"/>
+                    <input type="submit" value="ok"/>
                   </form>
                   <p><a class="textLink" href="/categories">View Blog Categories</a></p>
                </div>
           </div>
+          <!--<main>-->
+            <!-- <%=allPosts%> -->
+          <!--</main>-->
         <!--previous end of for loop-->
   </div>
   <div class="footer">

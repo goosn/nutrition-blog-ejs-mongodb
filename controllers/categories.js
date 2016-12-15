@@ -3,34 +3,55 @@ var express = require('express');
 var router = express.Router(); //() parentheses is an invokation
 
 //Models
-var categories = require('../models/categories.js')
+var Category = require('../models/categories.js')
 
 //Routes
+
     router.get('/', function(req, res){
-      categories.find({}, function(err, blog) { // categories needs to match line 6
-      res.render('categories/index.ejs', {Options: blog});
+	      Category.find({}, function(err, foundCategories){
+		        res.render('categories/index.ejs', {
+			           categories: foundCategories
+      		});
+      	});
       });
-    });
 
-    //show for categories
-    router.get('/categories', function(req, res){
-      res.render('categories/index.ejs')
-    });
-
-    //show
-    router.get('/:id', function(req, res){
-      Blog.findById(req.params.id, function(err, createdBlog){ //computer finds id in req.params
-        res.render('blog/post.ejs', {blog: createdBlog}) // 1)render post page, make createdBlog available 2)res.render points to the views folder by default
+      router.post('/', function(req, res){
+      	Category.create(req.body, function(err, createdCategory){
+      		res.redirect('/categories');
+      	});
       });
-    });
 
-    //put
-    router.put('/:id', function(req, res){
-	    Author.findByIdAndUpdate(req.params.id, req.body, function(){
-		    res.redirect('/authors');
-    	});
-    });
+      router.get('/new', function(req, res){
+      	res.render('categories/new.ejs');
+      });
 
+      router.get('/:id', function(req, res){
+      	Category.findById(req.params.id, function(err, foundCategory){
+      		res.render('categories/show.ejs', {
+      			category: foundCategory
+      		});
+      	});
+      });
+
+      router.delete('/:id', function(req, res){
+      	Category.findByIdAndRemove(req.params.id, function(){
+      		res.redirect('/categories');
+      	});
+      });
+
+      router.put('/:id', function(req, res){
+      	Category.findByIdAndUpdate(req.params.id, req.body, function(){
+      		res.redirect('/categories');
+      	});
+      });
+
+      router.get('/:id/edit', function(req, res){
+      	Category.findById(req.params.id, function(err, foundCategory){
+      		res.render('categories/edit.ejs', {
+      			category: foundCategory
+      		});
+      	});
+      });
 
 
 //EXPORT

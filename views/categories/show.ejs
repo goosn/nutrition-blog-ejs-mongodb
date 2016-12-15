@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <!-- <p>category: <%=category.name%></p> -->
+    <h2>Articles In This Category<h2>
+      <ul>
+        <% for(var i= 0; i <category.posts.length; i++) { %>
+          <li><a href="/categories/<%=category.posts[i]._id%>"<%=category.posts[i].category%></li>
+        <% } %>
+      </ul>
+      <form action="/categories/<%=category._id%>?_method=DELETE" method="post">
+					<input type="submit" value="Delete"/>
+			</form>
+  </body>
+</html>

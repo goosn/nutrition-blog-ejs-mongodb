@@ -6,7 +6,7 @@
   </head>
   <body>
     <header>
-        <h1>Edit <%=Blog.title%></h1>
+        <h1>Edit</h1>
           <ul>
             <li>
               <a href="/blog">Blog Home</a>
@@ -15,8 +15,11 @@
     </header>
     <main>
         <h2>Blog Post Attributes:</h2>
-        <form action="/blog/<%=blog._id%>?_method=PUT" method="post">
-          <input type="text" name="name" value="<%=blog.title%>"/><br/>
+        <form action="/blog/<%=post._id%>?_method=PUT" method="post">
+          <input name="title" placeholder="title" value="<%=post.title%>"/> <br/>
+          <input name="body" placeholder="body" value="<%=post.body%>"/> <br/>
+          <input name="img" placeholder="img url" value="<%=post.img%>"/> <br/>
+          <input name="category" placeholder="category" value="<%=post.category%>"/> <br/>
           <input type="submit" value="Update Post"/>
         </form>
     </main>
