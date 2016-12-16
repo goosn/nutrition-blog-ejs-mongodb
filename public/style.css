@@ -4,7 +4,7 @@ p, h2, h3, h1 {
   margin: 0px;
 }
 a {
-  color: #fff;
+  color: #e5e9ea;
 }
 
 
@@ -12,6 +12,7 @@ a {
 .nav {
   border-bottom: 1px solid #dbdbdb !important;
   height: 75px !important;
+  margin-bottom: 12vw;
 }
 .navLogo {
   max-height: 35px;
@@ -31,6 +32,7 @@ a {
   padding: 5px;
   width: 68px;
   border-radius: 1px;
+  margin-left: 10px;
 }
 .textLink {
   color: #435363;
@@ -57,5 +59,5 @@ a {
   height: 250px;
   background-color: #172331;
   clear: both;
-  margin-top: 3vw;
+  margin-top: 20vw;
 }

@@ -8,6 +8,18 @@
     <title>Blog Categories</title>
   </head>
   <body>
+    <div class="nav">
+      <div class="width">
+          <div class="col-xs-6">
+            <a href="https://www.mealpro.net"><img class="navLogo" src="https://www.mealpro.net/wp-content/themes/MealPro/imgs/MealPro_log_Black.png" alt="MealPro" title="MealPro"/></a>
+          </div>
+          <div class="span1 offset5 menuBar">
+            <p><span class="smallCTA"><a href="/blog/new">New Post</a></span>
+              <span class="smallCTA"><a href="/blog">Blog Home</a></span>
+            <span class="smallCTA"> <a href="/categories/new">New Category</a></span></p>
+          </div>
+     </div>
+   </div>
     <h1>Category Name</h1>
     <% for (var num = 0; num < categories.length; num++) { %>
         <!--Category List-->
@@ -15,5 +27,7 @@
             <h2><a href="/categories/<%= categories[num]._id %>"><%=categories[num].category%></a></h2>
           </li>
     <% } %>
+    <div class="footer">
+    </div>
   </body>
 </html>
