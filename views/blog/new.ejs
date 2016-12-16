@@ -23,15 +23,15 @@
      </div>
   </div>
     <form action="/blog" method="POST">
-        <select name="categoryId">
+        <!-- <select name="categoryId">
           <% for(var i = 0; i < allCategories.length; i++) { %>
               <option value="<%allCategories[i]._id%>"><%=allCategories[i].category%></option>
           <% } %>
-        </select><br/>
+        </select><br/> -->
         <input name="title" type="text" placeholder="title"/> <!-- name is what will be sent though as a key value pair to the server-->
         <input name="body" type="text" placeholder="body"/>
         <input name="img" type="text" placeholder="image url"/>
-        <!-- <input name="categories" type="category" placeholder="category"/> -->
+        <input name="categories" type="category" placeholder="category"/>
         <input type="submit" value="Enter"/>
     </form>
     <div class="footer">
