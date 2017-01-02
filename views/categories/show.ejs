@@ -21,11 +21,11 @@
           </div>
      </div>
    </div>
-    <!-- <p>category: <%=category.name%></p> -->
     <h2>Articles In This Category<h2>
       <ul>
         <% for(var i= 0; i <category.posts.length; i++) { %>
-          <li><a href="/categories/<%=category.posts[i]._id%>"<%=category.posts[i].category%></li>
+          console.log(category.posts.length);
+          <li><a href="/categories/<%=category.posts[i]._id%>"<%=category.posts[i].category%></a></li>
         <% } %>
       </ul>
       <form action="/categories/<%=category._id%>?_method=DELETE" method="post">
