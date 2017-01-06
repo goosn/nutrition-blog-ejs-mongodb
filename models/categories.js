@@ -4,7 +4,7 @@ var Post = require('./blog.js');
 // Make a SCHEMA
 var Schema = mongoose.Schema;
 
-var categorySchema = mongoose.Schema({
+var categorySchema = new Schema({
   category: String,
   posts: [Post.schema]
 });

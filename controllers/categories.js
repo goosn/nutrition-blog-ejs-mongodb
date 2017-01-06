@@ -10,7 +10,7 @@ var Category = require('../models/categories.js')
     router.get('/', function(req, res){
 	      Category.find({}, function(err, foundCategories){
 		        res.render('categories/index.ejs', {
-			           categories: foundCategories
+			      categories: foundCategories
       		});
       	});
       });
@@ -27,6 +27,7 @@ var Category = require('../models/categories.js')
 
       router.get('/:id', function(req, res){
       	Category.findById(req.params.id, function(err, foundCategory){
+			//res.send(foundCategory);
       		res.render('categories/show.ejs', {
       			category: foundCategory
       		});

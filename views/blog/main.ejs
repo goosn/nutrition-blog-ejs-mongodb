@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-      <link href="/style.css" rel="stylesheet" type="text/css">
-      <link href="/blog.css" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="/style.css" type="text/css">
+      <link rel="stylesheet" href="/blog.css" type="text/css">
     <title>Nutrition Blog | MealPro</title>
   </head>
   <body>
@@ -22,10 +22,15 @@
   </div>
   <div>
         <div class="width body">
+          <h2><a class="textLink" href="/categories">View Blog Categories</a></h2>
           <% for (var num = 0; num < allPosts.length; num++) { %>
               <!--Articles-->
                 <div class='col-sm-8 col-sm-offset-2 featuredArticle'>
-                  <h2 class='blogText featuredArticleText'><a href="/blog/<%= allPosts[num]._id %>"><%=allPosts[num].title%></a></h2>
+                    <h2 class='blogText featuredArticleText'>
+                      <a href="/blog/<%= allPosts[num]._id %>">
+                        <span class="postImage" style="background-image: url('<%= allPosts[num].img %>');"> <%= allPosts[num].title%> </span>
+                      </a>
+                    </h2>
                 </div>
               <% } %>
 
@@ -36,7 +41,7 @@
                     <!-- <textarea name="body"></textarea><br/> -->
                     <!-- <input type="submit" value="ok"/> -->
                   <!-- </form> -->
-                  <h2><a class="textLink" href="/categories">View Blog Categories</a></h2>
+                  <!--<h2><a class="textLink" href="/categories">View Blog Categories</a></h2>-->
                <!-- </div> -->
           </div>
           <!--<main>-->

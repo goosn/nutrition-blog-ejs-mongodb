@@ -1,14 +1,13 @@
 var mongoose = require('mongoose');
 
-
 // Make a SCHEMA
 var Schema = mongoose.Schema;
 
-var postSchema = mongoose.Schema({
+var postSchema = new Schema({
   title: { type: String, required: true},
   body: String,
   img: {type: String, default:''},
-  category: String
+  categories: String
   // categories: [categorySchema]
 });
 

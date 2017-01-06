@@ -11,7 +11,8 @@ var Category = require('../models/categories.js')
     //Index
     router.get('/', function(req, res){
       Post.find({}, function(err, foundPosts) { // you could pass in a filter so {title: 'foo'} will return all articles with that title .find is a method // if it doesn't work it gets passed as err
-      res.render('blog/main.ejs', {allPosts: foundPosts}); // foundPosts is only a defined variable within this function. It is a placeholder that you make descriptive so you know what you are passing at that moment in time.
+        //res.send(foundPosts);
+        res.render('blog/main.ejs', {allPosts: foundPosts}); // foundPosts is only a defined variable within this function. It is a placeholder that you make descriptive so you know what you are passing at that moment in time.
       });
     });
 
@@ -84,19 +85,35 @@ var Category = require('../models/categories.js')
 
    //update
    router.put('/:id', function(req, res){
-      Post.findByIdAndUpdate(req.params.id, req.body, function(){
-          res.redirect('/blog');
-        });
+      Post.findById(req.params.id, function(err, foundPost){
+        Category.update ( // remove post in category because post is not belong in category furthur
+          {'category' : foundPost.categories},
+          {$pull: {posts: {_id : req.params.id}}}, 
+          {safe: true},
+          function() {
+            Post.findByIdAndUpdate(req.params.id, req.body, function(err, updatedPost){
+              Category.findOne({'category' : req.body.categories}, function(err, foundCategory){ // 'category' matches key inisde of schemas //req.body.categories is saved to foundCategory
+                foundCategory.posts.push(updatedPost);
+                foundCategory.save(function(err, data){
+                    res.redirect('/blog');
+                });
+              });
+            });    
+          }
+        );
+      });
    });
 
 
    //Create
-   router.post('/', function(req, res){ // going to receive data from blgo entry
+   router.post('/', function(req, res){ // going to receive data from blog entry
          Category.findOne({'category' : req.body.categories }, function(err, foundCategory){ // 'category' matches key inisde of schemas //req.body.categories is saved to foundCategory
-             Post.create(req.body, function(err, createdPost){
-               foundCategory.posts.push(createdPost);
-               foundCategory.save(function(err, data){
-                 res.redirect('/blog');
+           Post.create(req.body, function(err, createdPost){
+              // res.send(foundCategory);
+              foundCategory.posts.push(createdPost);
+              foundCategory.save(function(err, data){
+                  //res.send(data);
+                  res.redirect('/blog');
               });
            });
          });
